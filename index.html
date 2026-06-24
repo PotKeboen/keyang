@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keboen Keyang</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f5fff5;
+}
+
+header{
+background:linear-gradient(135deg,#2e7d32,#4caf50);
+padding:40px 20px;
+text-align:center;
+color:white;
+}
+
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.social{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.social a{
+background:white;
+color:#2e7d32;
+padding:10px 18px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+.container{
+display:grid;
+grid-template-columns:300px 1fr;
+gap:20px;
+padding:20px;
+}
+
+.sidebar{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+height:fit-content;
+}
+
+.catalog{
+margin-bottom:15px;
+padding:15px;
+background:#f8fff8;
+border-radius:15px;
+}
+
+.catalog h3{
+margin-bottom:10px;
+}
+
+.catalog p{
+font-size:14px;
+color:#666;
+margin-bottom:10px;
+}
+
+.catalog button{
+width:100%;
+border:none;
+background:#4caf50;
+color:white;
+padding:12px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.main{
+width:100%;
+}
+
+#search{
+width:100%;
+padding:15px;
+border:2px solid #ddd;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.info{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+margin-bottom:20px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+text-align:center;
+}
+
+.card button{
+width:100%;
+padding:10px;
+border:none;
+background:#4caf50;
+color:white;
+border-radius:10px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.7);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal-box{
+background:white;
+width:500px;
+max-width:90%;
+border-radius:20px;
+overflow:hidden;
+}
+
+.modal-box img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.modal-box div{
+padding:20px;
+}
+
+.close{
+float:right;
+font-size:30px;
+cursor:pointer;
+}
+
+.wa-float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+font-size:28px;
+color:white;
+}
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>KEBOEN KEYANG</h1>
+<p>Pot • Guci • Vas • Kerajinan Nusantara</p>
+
+<div class="social">
+<a href="https://www.instagram.com/keboen.keyang" target="_blank">Instagram</a>
+
+<a href="https://wa.me/6287701081818?text=Halo%20Keboen%20Keyang" target="_blank">WhatsApp</a>
+
+<a href="https://shopee.co.id/keboen.keyang9?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnTpYql0Bw0flZkCaSob85nnJ10SCgGBlBCnnxtrMnHXm6mPhZ8vy23B3JtIk_aem_U_9aVLve7oc2XYnWKGRdOQ&tab=shop&uls_trackid=55vn8oao00p0&utm_content=4PbfGwJuDJpLs4qSft69PgdVty67" target="_blank">Shopee</a>
+
+<a href="https://www.tokopedia.com/archive-thakira?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcASo6vBleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAadfK10PwBovO4sRVJ7jXb-6-f--prSArnK0DycVuSdNWV4Ho-ab41mFu_LvyQ_aem_KzsTFiBro1bmbxJ9AOoOhA" target="_blank">Tokopedia</a>
+</div>
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>Katalog</h2>
+
+<div class="catalog">
+<h3>Karakter</h3>
+<p>Pot karakter unik dan lucu.</p>
+<button onclick="showCatalog('karakter')">Lihat Produk</button>
+</div>
+
+<div class="catalog">
+<h3>Batik</h3>
+<p>Motif batik khas Indonesia.</p>
+<button onclick="showCatalog('batik')">Lihat Produk</button>
+</div>
+
+<div class="catalog">
+<h3>Glossy</h3>
+<p>Finishing mengkilap premium.</p>
+<button onclick="showCatalog('glossy')">Lihat Produk</button>
+</div>
+
+<div class="catalog">
+<h3>Terakota</h3>
+<p>Nuansa alami dan klasik.</p>
+<button onclick="showCatalog('terakota')">Lihat Produk</button>
+</div>
+
+<div class="catalog">
+<h3>Marbel</h3>
+<p>Motif marbel mewah.</p>
+<button onclick="showCatalog('marbel')">Lihat Produk</button>
+</div>
+
+<div class="catalog">
+<h3>Rustik</h3>
+<p>Gaya natural dan vintage.</p>
+<button onclick="showCatalog('rustik')">Lihat Produk</button>
+</div>
+
+</div>
+
+<div class="main">
+
+<input type="text" id="search" placeholder="Cari produk...">
+
+<div class="info">
+<h2 id="title">Katalog Karakter</h2>
+<p id="desc">Koleksi produk Keboen Keyang.</p>
+</div>
+
+<div class="products" id="products"></div>
+
+</div>
+
+</div>
+
+<div class="modal" id="modal">
+<div class="modal-box">
+
+<img id="modalImg">
+
+<div>
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 id="modalTitle"></h2>
+<p id="modalCode"></p>
+
+<br>
+
+<a id="waLink"
+target="_blank"
+style="background:#25D366;color:white;padding:10px 20px;border-radius:10px;text-decoration:none;display:inline-block;">
+Chat Admin
+</a>
+
+</div>
+
+</div>
+</div>
+
+<a class="wa-float" href="#">💬</a>
+
+<script>
+
+const jumlahProduk={
+karakter:20,
+batik:20,
+glossy:20,
+terakota:20,
+marbel:20,
+rustik:20
+};
+
+const products=[];
+
+for(const kategori in jumlahProduk){
+
+for(let i=1;i<=jumlahProduk[kategori];i++){
+
+products.push({
+name:kategori.charAt(0).toUpperCase()+kategori.slice(1)+" "+i,
+code:kategori.substring(0,2).toUpperCase()+String(i).padStart(3,"0"),
+category:kategori,
+
+image:`images/${kategori}/${i}.jpg`
+
+});
+
+}
+
+}
+
+const container=document.getElementById("products");
+
+function render(data){
+
+container.innerHTML="";
+
+data.forEach((p,index)=>{
+
+container.innerHTML+=`
+<div class="card">
+
+<img src="${p.image}">
+
+<div class="card-content">
+
+<h3>${p.name}</h3>
+<p>${p.code}</p>
+
+<button onclick="openModal(${products.indexOf(p)})">
+Lihat Produk
+</button>
+
+</div>
+
+</div>
+`;
+
+});
+
+}
+
+function showCatalog(category){
+
+const hasil=
+products.filter(p=>p.category===category);
+
+render(hasil);
+
+document.getElementById("title").innerText=
+"Katalog "+category;
+
+}
+
+function openModal(index){
+
+const p=products[index];
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalImg").src=p.image;
+document.getElementById("modalTitle").innerText=p.name;
+document.getElementById("modalCode").innerText=p.code;
+
+document.getElementById("waLink").href =
+"https://wa.me/6287701081818?text=" +
+encodeURIComponent("Halo Admin Keboen Keyang, saya tertarik dengan " + p.name + " (" + p.code + ")");
+
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+document.getElementById("search")
+.addEventListener("keyup",function(){
+
+const key=this.value.toLowerCase();
+
+render(
+products.filter(p=>
+p.name.toLowerCase().includes(key)
+)
+);
+
+});
+
+showCatalog("karakter");
+
+</script>
+
+</body>
+</html> 
